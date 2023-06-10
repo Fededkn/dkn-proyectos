@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Completa tus datos y trabaja con nosotros">
+    <meta name="keywords" content="drone, servicio, inspección aérea, tecnología,torres alta tensión, energía, transformadores">
+    <link id="logofavicon" rel="shortcut icon" href="../multimedia/img/logos/faviconGEGblanco.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../sass/estilos.css">
+    <title>Trabaja con nosotros</title>
+</head>
+<body>
+    <!-- HEADER INICIO -->
+    <header>
+        <!-- LOGO INICIO-->
+        <span class="logo">
+            <img src="../multimedia/img/logos/logoGEG-removebg.png" alt="Logo de empresa Global Energy Group S.A.">
+        </span>
+        <!-- LOGO FIN-->
+        <!-- NAV BAR INICIO-->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/ahorropredictivo.html">Ahorro predictivo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#footer">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/staff.html">Staff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/trabajaconnosotros.html">Trabaja con nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/webmail.html">Webmail</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- NAV BAR FIN-->
+    </header>
+    <!-- HEADER FIN -->
+    <!-- MAIN INICIO -->
+    <main>
+        <div class="tituloPrincipal">
+            <h1>Trabaja con nosotros</h1>
+        </div>
+        <hr>
+        <div class="row form-trabajaConNosotros container-fluid">
+            <!-- COLUMNA FORM 1 INICIO -->
+            <aside class="col-sm-12 col-md-6 col-lg-4">
+                <form method="post" class="form-group">
+                    <label>Nombre<span class="requerido">*</span></label>
+                    <input type="text" class="form-control" required />
+                    <label>Apellido<span class="requerido">*</span></label>
+                    <input type="text" class="form-control" required />
+                    <label>D.N.I. <span class="requerido">*</span></label>
+                    <input type="number" class="form-control" required />
+                    <label>Fecha de nacimiento <span class="requerido">*</span></label>
+                    <input type="date" class="form-control" required />
+                    <label>Género</label>
+                    <span class="género">
+                        <p>Hombre <input type="radio" name="genero" value="hombre"></p>
+                        <p>Mujer <input type="radio" name="genero" value="mujer"></p>
+                        <p>Sin especificar <input type="radio" name="genero" value="sin especificar"></p>
+                    </span>
+                    <label>Whatsapp</label>
+                    <input type="number" class="form-control" placeholder="(Ej. 54 9 1141876688)" />
+                    <label>Ciudad de residencia <span class="requerido">*</span></label>
+                    <input type="text" class="form-control" required />
+            </aside>
+            <!-- COLUMNA FORM 1 FIN -->
+            <!-- COLUMNA FORM 2 INICIO -->
+            <aside class="col-sm-12 col-md-6 col-lg-4">
+                <label>Nivel de estudios <span class="requerido">*</span></label>
+                <select name="Nivel de estudios" class="form-control" required>
+                    <option value=""></option>
+                    <option value="1">Primario</option>
+                    <option value="2">Secundario</option>
+                    <option value="3">Terciario</option>
+                    <option value="4">Universitario</option>
+                </select>
+                <label>Experiencia laboral <span class="requerido">*</span></label><br>
+                <textarea class="textarea" cols="50" rows="5" required resize></textarea><br>
+                <label>Contanos qué sabes hacer y qué te gustaría hacer con nosotros <span
+                        class="requerido">*</span></label><br>
+                <textarea class="textarea" cols="50" rows="5" required resize></textarea><br>
+                <div class="botonTrabajaConNosotros">
+                    <button type="reset" class="btn btn-light">Reset</button>
+                
+                    <button type="submit" class="btn btn-light">Enviar</button>
+                </div>
+                
+            </aside>
+            <!-- COLUMNA FORM 2 FIN -->
+            <!-- CARRUSEL INICIO -->
+            <aside class="img-trabajaConNosotros col-sm-12 col-md-6 col-lg-4">
+                <div id="carouselExampleSlidesOnly" class="carousel slide slideTrabajaConNosotros" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../multimedia/img/trabajaconnosotros/trabajaconnosotros01.png" class="d-block w-100" alt="Imagen de personal">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../multimedia/img/trabajaconnosotros/trabajaconnosotros02.png" class="d-block w-100" alt="Imagen de camioneta ploteada">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- CARRUSEL FIN -->
+        </div>
+    </main>
+    <!-- MAIN FIN -->
+    <!-- FOOTER INICIO -->    
+    <footer id="footer">
+        <div class="logoFooter">
+            <img src="../multimedia/img/logos/logoGEG2-removebg-preview.png" alt="Logo de empresa Global Energy Group S.A.">
+        </div>
+        <div class="navFooter">
+            <ul class="">
+                <li class="">
+                    <a class="" href="../index.html">Nosotros</a>
+                </li>
+                <li class="">
+                    <a class="" href="../pages/ahorropredictivo.html">Ahorro predictivo</a>
+                </li>
+                <li class="">
+                    <a class="" href="../index.html#footer">Clientes</a>
+                </li>
+                <li class="">
+                    <a class="" href="../pages/staff.html">Staff</a>
+                </li>
+                <li class="">
+                    <a class="" href="../pages/trabajaconnosotros.html">Trabaja con nosotros</a>
+                </li>
+                <li class="">
+                    <a class="" href="../pages/contacto.html">Contacto</a>
+                </li>
+                <li class="">
+                    <a class="" href="../pages/webmail.html">Webmail</a>
+                </li>
+            </ul>
+        </div>
+        <span class="redesFooter">
+            <span>
+                <a href="info@globalenergygroup.com.ar" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://www.instagram.com/global_energy_group/" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/globalenegygroup/?view_public_for=100891581257357" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://twitter.com/globalenergygr" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/globalenergygroup/" target="_blank"><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </span>
+
+            <p>Todos los derechos son reservados por copyright.</p>
+        </span>
+    </footer>
+    <!-- FOOTER FIN --> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
+    </script>
+</body>
+</html>
