@@ -1,6 +1,9 @@
 console.log("Herramientas a elegir:");
-console.log("1. Calculadora de interés compuesto");
-console.log("2. Calculadora para tamaño de posición");
+console.log("1. Calculadora de interés compuesto.");
+console.log("2. Calculadora para tamaño de posición.");
+console.log("3. Calculadora de precio para CEDEAR.");
+
+      //Calculadora para precios de CEDEARS INICIO
 
 let opcion = parseInt(prompt ("Elija la herramienta a utilizar o 'salir' para cerrar:")); 
 
@@ -24,9 +27,9 @@ while (opcion !== "salir") {
       console.log("Capital inicial:", capital);
       console.log("Tasa:", tasa);
       console.log("Periodos reinvertidos:", reinversion)
-      console.log("Interés:", + (rendimiento-capital));
-      console.log("Total:", + rendimiento)
-      console.log("Rendimiento %:", + ((rendimiento-capital) / capital) * 100);
+      console.log("Interés generado:", + (rendimiento-capital).toFixed(2));
+      console.log("Total:", + rendimiento.toFixed(2))
+      console.log("Rendimiento %:", ((rendimiento - capital) / capital * 100).toFixed(2));
 
       //Calculadora de interes compuesto FIN
 
@@ -48,9 +51,9 @@ while (opcion !== "salir") {
       let capitalPorcentaje = (capitalColocar / capitalInicial) * 100;
 
       console.log("Capital inicial:", capitalInicial);
-      console.log("Stop Loss:", stopLoss, "%")
-      console.log("Pérdida por stop loss:", capitalPerder, " y representa el ", perdidaPorcentaje, "% del capital inicial.");
-      console.log("Invertir:", capitalColocar, " y representa el ", capitalPorcentaje, "% del capital inicial.");
+      console.log("Stop Loss:", stopLoss.toFixed(2), "%")
+      console.log("Pérdida por stop loss:", capitalPerder.toFixed(2), " y representa el ", perdidaPorcentaje.toFixed(2), "% del capital inicial.");
+      console.log("Invertir:", capitalColocar, " y representa el ", capitalPorcentaje.toFixed(2), "% del capital inicial.");
 
       if (capitalPorcentaje > capitalLimite) {
         console.log("La inversión es grande, representa mas del 20% del capital incial.");
