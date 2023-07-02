@@ -2,17 +2,18 @@ console.log("Herramientas a elegir:");
 console.log("1. Calculadora de interés compuesto.");
 console.log("2. Calculadora para tamaño de posición.");
 console.log("3. Calculadora de precio para CEDEAR.");
+console.log("4. Registrar operaciones.");
 
-      //Calculadora para precios de CEDEARS INICIO
+let opcion = parseInt(prompt("Elija la herramienta a utilizar o 'salir' para cerrar:"));
 
-let opcion = parseInt(prompt ("Elija la herramienta a utilizar o 'salir' para cerrar:")); 
+let activosArray = [];
 
 while (opcion !== "salir") {
   switch (opcion) {
     case 1:
-  
-      //Calculadora de interes compuesto INICIO
-  
+
+      ////////// Calculadora de interes compuesto INICIO
+
       console.log("Seleccionaste la Calculadora de interés compuesto:")
       var capital = parseFloat(prompt("Ingrese el capital a invertir:"));
       var tasa = parseFloat(prompt("Ingrese la tasa de interés:"));
@@ -27,17 +28,17 @@ while (opcion !== "salir") {
       console.log("Capital inicial:", capital);
       console.log("Tasa:", tasa);
       console.log("Periodos reinvertidos:", reinversion)
-      console.log("Interés generado:", + (rendimiento-capital).toFixed(2));
-      console.log("Total:", + rendimiento.toFixed(2))
+      console.log("Interés generado:", +(rendimiento - capital).toFixed(2));
+      console.log("Total:", +rendimiento.toFixed(2))
       console.log("Rendimiento %:", ((rendimiento - capital) / capital * 100).toFixed(2));
 
       //Calculadora de interes compuesto FIN
 
       break;
-  
+
     case 2:
 
-      //Calculadora para tamaño de posición INICIO
+      ////////// Calculadora para tamaño de posición INICIO
 
       console.log("Seleccionaste la calculadora para tamaño de posición:")
 
@@ -67,7 +68,7 @@ while (opcion !== "salir") {
 
     case 3:
 
-      //Calculadora para precios de CEDEARS INICIO
+      ////////// Calculadora para precios de CEDEARS INICIO
 
       console.log("Seleccionaste la calculadora para CEDEARS:")
 
@@ -75,7 +76,7 @@ while (opcion !== "salir") {
       let precioCcl = parseFloat(prompt("Ingrese el precio del CCL:"));
       let ratio = parseFloat(prompt("Ingrese el ratio de conversión:"));
 
-      function cedear (precioSub, precioCcl, ratio) {
+      function cedear(precioSub, precioCcl, ratio) {
         let precioCedear = (precioSub * precioCcl) / ratio;
         return precioCedear;
       }
@@ -84,16 +85,127 @@ while (opcion !== "salir") {
 
       console.log("El precio aproximado del CEDEAR consultado es de: " + resultado)
 
+      //Calculadora para precios de CEDEARS FIN
+
       break;
+
+    case 4:
+
+      ////////// Registrar operaciones
+
+      console.log("Agregar acción/CEDEAR.");
+
+      class Activo {
+        constructor(nombre, ticker, capitalInvertido, cantidadPapeles, tipoActivo) {
+          this.nombre = nombre;
+          this.ticker = ticker;
+          this.capitalInvertido = capitalInvertido;
+          this.cantidadPapeles = cantidadPapeles;
+          this.tipoActivo = tipoActivo;
+          this.precioPromedioCompra = capitalInvertido / cantidadPapeles;
+        }
+      }
+      
+      // Switch para manejar las opciones
+      let opcion = parseInt(prompt("Seleccione una opción:\n1. Agregar activo\n2. Eliminar activo\n3. Buscar activo\n4. Filtrar activos por tipo"));
+      
+      // while (opcion !== "salir") {
+        switch (opcion) {
+          case 1:
+
+            // AGREGAR ACTIVO
+
+            function activoAgregar() {
+              let nombre = prompt("Ingrese el nombre del activo:");
+              let ticker = prompt("Ingrese el ticker del activo:");
+              let capitalInvertido = parseFloat(prompt("Ingrese el capital invertido en el activo:"));
+              let cantidadPapeles = parseFloat(prompt("Ingrese la cantidad de papeles del activo:"));
+              let tipoActivo = prompt("Ingrese el tipo de activo:");
+              
+              let activo = new Activo(nombre, ticker, capitalInvertido, cantidadPapeles, tipoActivo);
+              activosArray.push(activo);
+            }
+            
+            activoAgregar();
+            break;
+            
+          case 2:
+
+            // ELIMINAR ACTIVO
+
+            function activoEliminar() {
+              let ticker = prompt("Ingrese el ticker del activo a eliminar:");
+              
+              for (let i = 0; i < activosArray.length; i++) {
+                if (activosArray[i].ticker === ticker) {
+                  activosArray.splice(i, 1);
+                  console.log("Activo eliminado.");
+                  return;
+                }
+              }
+              
+              console.log("No se encontró ningún activo con ese nombre.");
+            }
+            
+            activoEliminar();
+            break;
+            
+          case 3:
+
+            // BUSCAR ACTIVO
+
+            function activoBuscar() {
+              let nombre = prompt("Ingrese el nombre del activo a buscar:");
+              
+              for (let i = 0; i < activosArray.length; i++) {
+                if (activosArray[i].nombre === nombre) {
+                  console.log(activosArray[i]);
+                  return;
+                }
+              }
+              
+              console.log("No se encontró ningún activo con ese nombre.");
+            }
+            
+            activoBuscar();
+            break;
+            
+          case 4:
+
+            // FILTRAR ACTIVO POR TIPO: ACCIÓN O CEDEAR.
+
+            let tipo = prompt("Ingrese el tipo de activo por el que desea filtrar:");
+          
+            let activosFiltrados = activosArray.filter(activo => activo.tipoActivo === tipo);
+          
+            if (activosFiltrados.length > 0) {
+              console.log("Activos encontrados del tipo", tipo + ":");
+              activosFiltrados.forEach(activo => console.log(activo));
+            } else {
+              console.log("No se encontraron activos del tipo", tipo + ".");
+            }
+            break;
+            
+          default:
+            console.log("Opción inválida.");
+            break;
+      // }
+
+        opcion = prompt("Escriba 'salir' para cerrar")
+        
+        // Mostrar el contenido del array
+        console.log(activosArray);
+
+        
+      }
 
     default:
 
       console.log("Por favor, elija un valor correcto: 1, 2 o 3.")
 
-      //Calculadora para precios de CEDEARS FIN
-
       break;
+
   }
-  opcion = prompt ("Escriba 'salir' para cerrar")
+  opcion = prompt("Escriba 'salir' para cerrar")
 }
 
