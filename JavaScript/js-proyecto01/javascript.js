@@ -6,6 +6,8 @@ console.log("4. Registrar operaciones.");
 
 let opcion = parseInt(prompt("Elija la herramienta a utilizar o 'salir' para cerrar:"));
 
+let activosArray = [];
+
 while (opcion !== "salir") {
   switch (opcion) {
     case 1:
@@ -93,8 +95,6 @@ while (opcion !== "salir") {
 
       console.log("Agregar acción/CEDEAR.");
 
-      let activosArray = [];
-
       class Activo {
         constructor(nombre, ticker, capitalInvertido, cantidadPapeles, tipoActivo) {
           this.nombre = nombre;
@@ -108,88 +108,89 @@ while (opcion !== "salir") {
 
       let opcion = parseInt(prompt("Seleccione una opción:\n1. Agregar activo\n2. Eliminar activo\n3. Buscar activo\n4. Filtrar activos por tipo"));
 
-      // AGREGAR ACTIVO
-      function activoAgregar() {
-        let nombre = prompt("Ingrese el nombre del activo:");
-        let ticker = prompt("Ingrese el ticker del activo:");
-        let capitalInvertido = parseFloat(prompt("Ingrese el capital invertido en el activo:"));
-        let cantidadPapeles = parseFloat(prompt("Ingrese la cantidad de papeles del activo:"));
-        let tipoActivo = prompt("Ingrese el tipo de activo:");
-
-        let activo = new Activo(nombre, ticker, capitalInvertido, cantidadPapeles, tipoActivo, precioPromedioCompra);
-  
-        activosArray.push(activo);
-      }
-
-      // ELIMINAR ACTIVO
-
-      function activoEliminar() {
-        let ticker = prompt("Ingrese el ticker del activo a eliminar:");
-
-        for (let i = 0; i < activosArray.length; i++) {
-          if (activosArray[i].ticker === ticker) {
-            activosArray.splice(i, 1);
-            console.log("Activo eliminado.");
-            return;
-          }
-        }
-
-        console.log("No se encontró ningún activo con ese nombre.");
-      }
-
-      // BUSCAR ACTIVO
-
-      function activoBuscar() {
-        let nombre = prompt("Ingrese el nombre del activo a buscar:");
-
-        for (let i = 0; i < activosArray.length; i++) {
-          if (activosArray[i].nombre === nombre) {
-            console.log(activosArray[i]);
-            return;
-          }
-        }
-
-        console.log("No se encontró ningún activo con ese nombre.");
-      }
-
-      // FILTRAR ACTIVO
-
-      // let tipo = prompt("Ingrese el tipo de activo por el que desea filtrar:");
-
-      // let activosFiltrados = activosArray.filter(activo => activo.tipoActivo === tipo);
-
-      // if (activosFiltrados.length > 0) {
-      //   console.log("Activos encontrados del tipo", tipo + ":");
-      //   activosFiltrados.forEach(activo => console.log(activo));
-      // } else {
-      //   console.log("No se encontraron activos del tipo", tipo + ".");
-      // }
-
-      opcion = prompt("Escriba 'salir' para cerrar")
-
       while (opcion !== "salir") {
         switch (opcion) {
           case 1:
+
+            // AGREGAR ACTIVO
+
+            function activoAgregar() {
+              let nombre = prompt("Ingrese el nombre del activo:");
+              let ticker = prompt("Ingrese el ticker del activo:");
+              let capitalInvertido = parseFloat(prompt("Ingrese el capital invertido en el activo:"));
+              let cantidadPapeles = parseFloat(prompt("Ingrese la cantidad de papeles del activo:"));
+              let tipoActivo = prompt("Ingrese el tipo de activo:");
+
+              let activo = new Activo(nombre, ticker, capitalInvertido, cantidadPapeles, tipoActivo);
+              activosArray.push(activo);
+            }
+
             activoAgregar();
-            break
+            break;
+
           case 2:
+
+            // ELIMINAR ACTIVO
+
+            function activoEliminar() {
+              let ticker = prompt("Ingrese el ticker del activo a eliminar:");
+
+              for (let i = 0; i < activosArray.length; i++) {
+                if (activosArray[i].ticker === ticker) {
+                  activosArray.splice(i, 1);
+                  console.log("Activo eliminado.");
+                  return;
+                }
+              }
+
+              console.log("No se encontró ningún activo con ese nombre.");
+            }
+
             activoEliminar();
-            break
+            break;
+
           case 3:
+
+            // BUSCAR ACTIVO
+
+            function activoBuscar() {
+              let nombre = prompt("Ingrese el nombre del activo a buscar:");
+
+              for (let i = 0; i < activosArray.length; i++) {
+                if (activosArray[i].nombre === nombre) {
+                  console.log(activosArray[i]);
+                  return;
+                }
+              }
+
+              console.log("No se encontró ningún activo con ese nombre.");
+            }
+
             activoBuscar();
-          break
+            break;
+
+          case 4:
+
+            // FILTRAR ACTIVO
+
+            let tipo = prompt("Ingrese el tipo de activo por el que desea filtrar:");
+
+            let activosFiltrados = activosArray.filter(activo => activo.tipoActivo === tipo);
+
+            if (activosFiltrados.length > 0) {
+              console.log("Activos encontrados del tipo", tipo + ":");
+              activosFiltrados.forEach(activo => console.log(activo));
+            } else {
+              console.log("No se encontraron activos del tipo", tipo + ".");
+            }
+            break;
+
+          default:
+            console.log("Opción inválida.");
+            break;
         }
-      };
-      break;
-
-      default:
-
-        console.log("Por favor, elija un valor correcto: 1, 2 o 3.")
-
-        break;
+      }
+    }
   }
-}
-opcion = prompt("Escriba 'salir' para cerrar")
 
-// Mostrar el contenido del array
-console.log(activosArray);
+      opcion = prompt("Escriba 'salir' para cerrar")
