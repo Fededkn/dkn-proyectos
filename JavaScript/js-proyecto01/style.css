@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#formulario input,
+#btnAgregar {
+    margin-bottom: 10px;
+}
+
+.activo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.activo h3 {
+    margin-top: 0;
+}
+
+.activo button {
+    margin-top: 5px;
+}
+
+#ticker {
+    max-width: 60px;
+}
+
+#formulario {
+    margin-top: 50px;
+}
+div#formulario span {
+    margin-left: 20px;
+}
+
+button {
+    padding: 3px;
+    border: 1px solid #000;
+    margin: 8px;
+}
+
+span {
+    margin-left: 50px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
