@@ -1,3 +1,5 @@
+let arrayActivos = [];
+
 class Activo {
   constructor(ticker, nombre, cantidadPapeles, capitalInvertido) {
       this.ticker = ticker;
@@ -8,10 +10,6 @@ class Activo {
   }
 }
 
-// Variable global para almacenar los activos
-let arrayActivos = [];
-
-// Función para construir el div con los datos del activo
 function construirDivActivo(activo) {
   // Crear un nuevo div
   const divActivo = document.createElement("div");
@@ -24,7 +22,7 @@ function construirDivActivo(activo) {
       <p>Cantidad de Papeles: ${activo.cantidadPapeles}</p>
       <p>Precio Promedio de Compra: ${activo.precioPromedioCompra.toFixed(2)}</p>
       <p>Capital Invertido: ${activo.capitalInvertido}</p>
-      <button class="btnEliminar" data-activo="${arrayActivos.length}">Eliminar</button>
+      <button class="btnEliminar" indiceActivo="${arrayActivos.length}">Eliminar</button>
   `;
 
   // Agregar el div al contenedor de la lista de activos
@@ -41,8 +39,8 @@ function construirDivActivo(activo) {
 
 // Función para eliminar un activo
 function eliminarActivo() {
-  // Obtener el índice del activo a eliminar del atributo data-activo del botón
-  const indiceActivo = parseInt(this.getAttribute("data-activo"));
+  // Obtener el índice del activo a eliminar del atributo indiceActivo del botón
+  const indiceActivo = parseInt(this.getAttribute("indiceActivo"));
 
   // Eliminar el activo del array
   arrayActivos.splice(indiceActivo, 1);
@@ -71,7 +69,7 @@ function mostrarActivos() {
       <span>Cantidad de Papeles: ${activo.cantidadPapeles}</span>
       <span>Precio Promedio de Compra: ${activo.precioPromedioCompra.toFixed(2)}</span>
       <span>Capital Invertido: ${activo.capitalInvertido}</span>
-      <button class="btnEliminar" data-activo="${index}">Eliminar</button>
+      <button class="btnEliminar" indiceActivo="${index}">Eliminar</button>
   `;
 
       // Agregar el div al contenedor de la lista de activos
@@ -137,14 +135,19 @@ function agregarActivo() {
   calcularTotalInvertido();
 }
 
-// Asignar el evento de click al botón "Agregar"
-document.getElementById("btnAgregar").addEventListener("click", agregarActivo);
+// Asignar el evento de carga de la página para evitar la actualización
+document.addEventListener("DOMContentLoaded", (e) => {
+  e.preventDefault();
 
-// Asignar el evento de click al botón "Guardar cambios"
-document.getElementById("btnGuardar").addEventListener("click", guardarActivos);
+  // Asignar el evento de click al botón "Agregar"
+  document.getElementById("btnAgregar").addEventListener("click", agregarActivo);
 
-// Asignar el evento de click al botón "Recuperar"
-document.getElementById("btnRecuperar").addEventListener("click", recuperarActivos);
+  // Asignar el evento de click al botón "Guardar cambios"
+  document.getElementById("btnGuardar").addEventListener("click", guardarActivos);
+
+  // Asignar el evento de click al botón "Recuperar"
+  document.getElementById("btnRecuperar").addEventListener("click", recuperarActivos);
+});
 
 // --------------------------CODIO ANTERIO DE REFERENCIA--------
 
