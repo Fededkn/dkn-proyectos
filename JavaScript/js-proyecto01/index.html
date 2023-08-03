@@ -9,36 +9,70 @@
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
     <title>Calcular inversión</title>
 </head>
 <body class="container">
-    <h1>Registro de operaciones:</h1>
-    <div id="formulario">
-        <!-- Campos del formulario -->
-        <span>
-            <label for="ticker">Ticker:</label>
-            <input type="text" id="ticker">
-        </span>
-        <span>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre">
-        </span>
-        <span>
-            <label for="cantidadPapeles">Cantidad:</label>
-            <input type="number" id="cantidadPapeles">
-        </span>
-        <span>
-            <label for="capitalInvertido">Capital Invertido:</label>
-            <input type="number" id="capitalInvertido">
-        </span>
-    </div>
-    <!-- Botones -->
-    <button id="btnAgregar">Agregar</button>
-    <button id="btnGuardar">Guardar cambios</button>
-    <button id="btnRecuperar">Recuperar</button>
-    <p id="totalInvertido"></p>
-    <div id="listaActivos"></div>
+        <h1>Registro de operaciones:</h1>
+
+        <main class="main">
+            <section class="sectionTabla">
+                <div id="formulario">
+                    <!-- Campos del formulario -->
+                    <span class="formTicker">
+                        <label for="ticker">Ticker:</label>
+                        <input type="text" id="ticker">
+                    </span>
+                    <span class="formNombre">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre">
+                    </span>
+                    <span class="formCantidad">
+                        <label for="cantidadPapeles">Cantidad:</label>
+                        <input type="number" id="cantidadPapeles">
+                    </span>
+                    <span class="formCapitalInvertido">
+                        <label for="capitalInvertido">Capital Invertido:</label>
+                        <input type="number" id="capitalInvertido">
+                    </span>
+                </div>
+                <!-- Botones AGREGAR-QUITAR-RECUPERAR  -->
+                <div class="botones">
+                    <button id="btnAgregar">Agregar</button>
+                    <button id="btnGuardar">Guardar</button>
+                    <button id="btnRecuperar">Recuperar</button>
+                </div>
+                <table id="tablaActivos">
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th id="precioPromedioCompra">PPC</th>
+                            <th>Capital Invertido</th>
+                            <th></th> <!-- Celda vacía para el botón de eliminar -->
+                        </tr>
+                    </thead>
+                    <tbody id="listaActivos">
+                        <!-- Las filas se agregan dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+            <aside class="asideGrafico">
+                <p id="totalInvertido"></p>
+                <p id="totalInvertidoDolares"></p>
+                <p id="cotizacion-ccl"></p>
+            <canvas id="graficoPie"></canvas>
+            </aside>
+        </main>
+        
+
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="javascript.js"></script>
 </body>
 </html>

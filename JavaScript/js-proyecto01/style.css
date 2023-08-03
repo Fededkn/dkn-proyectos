@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +10,24 @@
     padding: 20px;
 }
 
-#formulario input,
-#btnAgregar {
-    margin-bottom: 10px;
+#formulario span {
+    margin: 3px;
+}
+
+#ticker {
+    max-width: 60px;
+}
+
+#nombre {
+    max-width: 160px;
+}
+
+#cantidadPapeles {
+    max-width: 60px;
+}
+
+#capitalInvertido {
+    max-width: 100px;
 }
 
 .activo {
@@ -31,28 +44,75 @@
     margin-top: 5px;
 }
 
-#ticker {
-    max-width: 60px;
-}
-
-#formulario {
-    margin-top: 50px;
-}
-div#formulario span {
-    margin-left: 20px;
-}
-
 button {
-    padding: 3px;
+    padding: 4px 4px;
     border: 1px solid #000;
-    margin: 8px;
+    margin-right: 20px;
 }
 
-span {
-    margin-left: 50px;
+.botones {
+    margin: 12px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 h1 {
     font-size: 25px;
 }
 
+table {
+    border: 1px solid black;
+    /* Agregamos borde negro de 1px solid */
+    border-collapse: collapse;
+    /* Para evitar doble borde entre las celdas */
+    width: 100%;
+    /* Ancho de la tabla al 100% */
+}
+
+th {
+    font-size: 14px;
+}
+
+th,
+td {
+    padding: 10px 10px;
+    /* Ajustamos el espacio interno (padding) para th y td */
+    text-align: center;
+    /* Centramos el contenido horizontalmente */
+    vertical-align: middle;
+    /* Centramos el contenido verticalmente */
+    border: 1px solid black;
+    /* Agregamos borde negro de 1px solid a los th y td */
+}
+
+#graficoPie {
+    height: 300px !important;
+    width: 300px !important;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Definimos dos columnas para distribuir el ancho */
+    grid-template-rows: auto; /* Altura automática */
+    /* gap: 10px; Espacio entre los divs, puedes ajustarlo según necesites */
+    grid-template-areas: "sectionTabla asideGrafico";  
+    gap: 20px;
+}
+
+.sectionTabla {
+    grid-area: sectionTabla;
+    padding: 10px;
+    border: 2px solid #5861e33c;
+    border-radius: 5px;
+}
+
+.asideGrafico {
+    grid-area: asideGrafico;
+    padding: 10px;
+    border: 2px solid #5861e33c;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
